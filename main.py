@@ -1,9 +1,13 @@
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from typing import List
+import uvicorn
 
 app = FastAPI()
 
@@ -89,3 +93,7 @@ def delete_term(term_id: int, db: Session = Depends(get_db)):
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Glossary API"}
+
+if __name__ == "__main__":
+    print("Starting the FastAPI server...")
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
