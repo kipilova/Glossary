@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary and Semantic Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Глоссарий употребляемых терминов ВКР</h1>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" id="tab-glossary">Глоссарий</div>
+        <div class="tab" id="tab-graph">Семантический граф</div>
+    </div>
+
+    <div class="content">
+        <!-- Glossary Content -->
+        <div id="glossary-content" class="glossary">
+            <p>Loading glossary...</p>
+        </div>
+
+        <!-- Graph Content -->
+        <div id="graph-content" style="display: none;">
+            <div id="network"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

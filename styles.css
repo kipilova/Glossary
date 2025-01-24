@@ -1,0 +1,103 @@
+/* Общий стиль страницы */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Шапка */
+.header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Табы */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.tab {
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    background-color: #4CAF50;
+    color: #fff;
+    border-color: #4CAF50;
+}
+
+.tab:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Контент */
+.content {
+    padding: 20px;
+}
+
+/* Glossary */
+.glossary {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* justify-content: space-around; */
+    /* align-items: flex-start; */
+    padding: 20px;
+}
+
+.glossary-item {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.glossary-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.glossary-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+.glossary-item p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Graph */
+#network {
+    width: 100%;
+    height: 600px;
+    border: 2px solid #4CAF50;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

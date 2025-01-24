@@ -8,8 +8,20 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from typing import List
 import uvicorn
+import json
+
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Настройка CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Разрешает запросы с любых доменов
+    allow_credentials=True,
+    allow_methods=["*"],  # Разрешает все методы (GET, POST, и т.д.)
+    allow_headers=["*"],  # Разрешает все заголовки
+)
 
 # Настройки базы данных
 DATABASE_URL = "sqlite:///./glossary.db"
@@ -98,3 +110,11 @@ if __name__ == "__main__":
     print("Starting the FastAPI server...")
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
 
+@app.get("/graph")
+def get_graph():
+    try:
+        with open("graph.json", "r", encoding="utf-8") as f:
+            graph = json.load(f)
+        return graph
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Graph data not found")
