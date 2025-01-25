@@ -10,3 +10,7 @@
 ## Пример работы сервиса:
 ![image](https://github.com/user-attachments/assets/acd203b7-ac4e-4af9-bcc7-eba2b7461826)
 
+## Интерфейс
+![image](https://github.com/user-attachments/assets/59a1b53c-774e-4d64-aacc-c45da11466ef)
+![Uploading image.png…]()
+
